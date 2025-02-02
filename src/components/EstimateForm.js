@@ -23,17 +23,12 @@ const EstimateForm = ({ title, description }) => {
                         Request an Estimate
                     </h2>
                     <form 
-                        name="estimate-form"  // This tells Netlify this is a form
-                        method="POST"
-                        netlify
-                        netlify-honeypot="bot-field"
+                        name="contact"
+                        data-netlify="true"
+                        method='post'
+                        hidden
                         className="space-y-4"
                     >
-                        <input type="hidden" name="form-name" value="estimate-form" />
-                        <p hidden>
-                            <label>Don’t fill this out if you’re human: <input name="bot-field" /></label>
-                        </p>
-
                         <div>
                             <label htmlFor="name" className="block text-black font-bold mb-2">Enter Your Name *</label>
                             <input type="text" id="name" name="name" placeholder="Your Name" className="w-full border border-gray-300 p-2" required />
