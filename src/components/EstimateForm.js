@@ -25,8 +25,6 @@ const EstimateForm = ({ title, description }) => {
                     
                     {/* Netlify Form Configuration */}
                     <form name="estimate" method="POST" data-netlify="true" className="space-y-4">
-                        <input type="hidden" name="form-name" value="estimate" />
-
                         <div>
                             <label htmlFor="name" className="block text-black font-bold mb-2">Enter Your Name *</label>
                             <input type="text" id="name" name="name" placeholder="Your Name" className="w-full border border-gray-300 p-2" required />
