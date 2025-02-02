@@ -1,11 +1,35 @@
-import Card from './Card';
+"use client";
+import { useState } from "react";
+import Card from "./Card";
 
 const EstimateForm = ({ title, description }) => {
+    const [formState, setFormState] = useState({ success: false, error: false });
+
+    const handleFormSubmit = async (event) => {
+        event.preventDefault();
+        const formData = new FormData(event.target);
+
+        try {
+            const response = await fetch("/_forms.html", {
+                method: "POST",
+                headers: { "Content-Type": "application/x-www-form-urlencoded" },
+                body: new URLSearchParams(formData).toString(),
+            });
+
+            if (response.ok) {
+                setFormState({ success: true, error: false });
+                event.target.reset(); // Reset form fields
+            } else {
+                setFormState({ success: false, error: true });
+            }
+        } catch (error) {
+            setFormState({ success: false, error: true });
+        }
+    };
+
     return (
         <section className="flex items-center justify-center bg-white sm:p-8">
-            {/* Card */}
             <Card>
-                {/* Left Section */}
                 <div className="w-full mid:w-1/2 flex flex-col my-6">
                     <h1 className="text-4xl sm:text-6xl font-bold text-black mb-4 font-alfarn tracking-[-3px]">
                         {title}
@@ -22,13 +46,9 @@ const EstimateForm = ({ title, description }) => {
                     <h2 className="text-2xl sm:text-3xl font-bold text-black my-4 font-alfarn tracking-[-3px] mid:my-7">
                         Request an Estimate
                     </h2>
-                    <form 
-                        name="contact"
-                        data-netlify="true"
-                        method='post'
-                        hidden
-                        className="space-y-4"
-                    >
+                    <form name="contact" onSubmit={handleFormSubmit} className="space-y-4">
+                        <input type="hidden" name="form-name" value="contact" />
+
                         <div>
                             <label htmlFor="name" className="block text-black font-bold mb-2">Enter Your Name *</label>
                             <input type="text" id="name" name="name" placeholder="Your Name" className="w-full border border-gray-300 p-2" required />
@@ -65,6 +85,11 @@ const EstimateForm = ({ title, description }) => {
                             </button>
                         </div>
                     </form>
+
+                    {/* Success & Error Messages */}
+                    {formState.success && <p className="text-green-600">Form submitted successfully!</p>}
+                    {formState.error && <p className="text-red-600">Something went wrong. Please try again.</p>}
+
                     <p className="mt-4 text-sm text-gray-600">
                         This site is protected by reCAPTCHA Enterprise and the Google <a href="#" className="text-blue-500">Privacy Policy</a> and <a href="#" className="text-blue-500">Terms of Service</a> apply.
                     </p>
