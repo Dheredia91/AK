@@ -22,9 +22,18 @@ const EstimateForm = ({ title, description }) => {
                     <h2 className="text-2xl sm:text-3xl font-bold text-black my-4 font-alfarn tracking-[-3px] mid:my-7">
                         Request an Estimate
                     </h2>
-                    
-                    {/* Netlify Form Configuration */}
-                    <form name="estimate" method="POST" data-netlify="true" className="space-y-4">
+                    <form 
+                        name="estimate-form"  // This tells Netlify this is a form
+                        method="POST"
+                        data-netlify="true"
+                        netlify-honeypot="bot-field"
+                        className="space-y-4"
+                    >
+                        <input type="hidden" name="form-name" value="estimate-form" />
+                        <p hidden>
+                            <label>Don’t fill this out if you’re human: <input name="bot-field" /></label>
+                        </p>
+
                         <div>
                             <label htmlFor="name" className="block text-black font-bold mb-2">Enter Your Name *</label>
                             <input type="text" id="name" name="name" placeholder="Your Name" className="w-full border border-gray-300 p-2" required />
@@ -35,11 +44,11 @@ const EstimateForm = ({ title, description }) => {
                         </div>
                         <div>
                             <label htmlFor="phone" className="block text-black font-bold mb-2">Your Phone *</label>
-                            <input type="tel" id="phone" name="phone" placeholder="Enter Your Phone Number" className="w-full border border-gray-300 p-2" />
+                            <input type="tel" id="phone" name="phone" placeholder="Enter Your Phone Number" className="w-full border border-gray-300 p-2" required />
                         </div>
                         <div>
                             <label htmlFor="address" className="block text-black font-bold mb-2">Project Address *</label>
-                            <input type="text" id="address" name="address" placeholder="Project Address" className="w-full border border-gray-300 p-2" />
+                            <input type="text" id="address" name="address" placeholder="Project Address" className="w-full border border-gray-300 p-2" required />
                         </div>
                         <div>
                             <label htmlFor="type" className="block text-black font-bold mb-2">Type of Project</label>
@@ -61,11 +70,8 @@ const EstimateForm = ({ title, description }) => {
                             </button>
                         </div>
                     </form>
-
                     <p className="mt-4 text-sm text-gray-600">
-                        This site is protected by reCAPTCHA Enterprise and the Google 
-                        <a href="#" className="text-blue-500"> Privacy Policy</a> and 
-                        <a href="#" className="text-blue-500"> Terms of Service</a> apply.
+                        This site is protected by reCAPTCHA Enterprise and the Google <a href="#" className="text-blue-500">Privacy Policy</a> and <a href="#" className="text-blue-500">Terms of Service</a> apply.
                     </p>
                 </div>
             </Card>

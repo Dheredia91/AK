@@ -1,0 +1,9 @@
+[build]
+  command = "npm run build"
+  publish = "/out"  # Ensure this matches your Next.js export folder
+
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
+
+[[plugins]]
+  package = "@netlify/plugin-form-submissions"
