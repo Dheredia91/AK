@@ -1,7 +1,0 @@
-{
-  "/estimate/page": "app/estimate/page.js",
-  "/home/page": "app/home/page.js",
-  "/services/page": "app/services/page.js",
-  "/gallery/page": "app/gallery/page.js",
-  "/contact/page": "app/contact/page.js"
-}
