@@ -1,15 +1,4 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
-
-# Ignore node_modules (dependencies should be installed via package.json)
-node_modules/
-
-# Ignore Next.js build files
-.next/
-
-# Ignore system files
-.DS_Store
-
-
 # dependencies
 node_modules/
 /.pnp
