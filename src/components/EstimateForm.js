@@ -25,7 +25,7 @@ const EstimateForm = ({ title, description }) => {
                     <form 
                         name="estimate-form"  // This tells Netlify this is a form
                         method="POST"
-                        data-netlify="true"
+                        netlify
                         netlify-honeypot="bot-field"
                         className="space-y-4"
                     >
