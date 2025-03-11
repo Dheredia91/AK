@@ -2,25 +2,31 @@ import Image from "next/image";
 import Button from "./Button";
 
 const HeroSection = ({ 
-  bgImage, 
+  bgImage,
+  blurDataURL,  
   titlePart1, 
   titlePart2, 
   showBadge = true, 
   showButton = true,
   showRibbon = true,
+  buttonText = "Get Estimate",
 }) => {
   return (
     <section className="relative flex h-[500px] sm:h-screen items-center justify-center overflow-hidden text-center pt-20 sm:pt-0">
       {/* Background Image */}
       <div className="absolute inset-0">
         <Image
-          src={bgImage}
-          alt="Background Image"
-          width={3464}
-          height={2309}
-          className="h-full w-full object-cover object-center"
-          priority={true}
-        />
+            src={bgImage}
+            alt="Background Image"
+            layout="fill"
+            objectFit="cover"
+            objectPosition="center"
+            priority="true"
+            quality={70}
+            placeholder="blur"
+            blurDataURL={blurDataURL}
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 100vw"
+          />
         <div className="absolute inset-0 bg-black bg-opacity-50"></div>
       </div>
 
@@ -67,7 +73,7 @@ const HeroSection = ({
         </div>
 
         {showButton && (
-          <Button href="/estimate">Get Estimate</Button>
+          <Button href="/estimate">{buttonText}</Button>
         )}
       </div>
 
@@ -76,9 +82,11 @@ const HeroSection = ({
       <div className="hidden sm:flex sm:absolute sm:right-0 sm:top-0 sm:-mr-24 sm:-mt-28 sm:items-end">
         <Image
           src="/Home_Ribbon.png"
-          alt="ribbon"
+          alt="Ribbon"
           width={1080}
           height={1080}
+          priority
+          quality={70}
           className="w-96 h-96"
         />
       </div>)

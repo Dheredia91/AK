@@ -4,14 +4,22 @@ import HomeOpener from "@/components/HomeOpener";
 import ServicesHeading from "@/components/ServiceHeading";
 import ServicesSection from "@/components/ServicesSection";
 import EstimateForm from "@/components/EstimateForm";
+import { generateBlurDataURL } from "@/utils/generateBlur";
 
-export default function HomePage() {
+export default async function HomePage() {
+  const blurDataURL = await generateBlurDataURL("/Home_Hero.jpeg");
   return (
     <>
+      <head>
+        <link rel="preload" as="image" href="/Home_Hero.jpeg" />
+      </head>    
       <HeroSection 
-        bgImage="/Home_Hero.jpeg" 
+        bgImage="/Home_Hero.jpeg"
+        blurDataURL={blurDataURL} 
         titlePart1="Delivering" 
-        titlePart2="Excellence" 
+        titlePart2="Excellence"
+        buttonText="Calculate Estimate"
+
       />
       <HomeOpener />
       <ServicesHeading

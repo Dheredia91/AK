@@ -1,6 +1,7 @@
 // pages/gallery/page.js
 import HeroSection from "@/components/HeroSection";
 import GalleryCard from "@/components/GalleryCard";
+import { generateBlurDataURL } from "@/utils/generateBlur";
 
 const images = [
   { src: "/Before.jpg", alt: "Gallery Image 1" },
@@ -21,14 +22,20 @@ const images = [
   { src: "/PatchCompacting.jpeg", alt: "Gallery Image 16" },
   { src: "/RollerCompactTrench.jpeg", alt: "Gallery Image 17" },
   { src: "/PatchCompactRoller.jpeg", alt: "Gallery Image 18" },
+  
 
 ];
 
-export default function GalleryPage() {
+export default async function GalleryPage() {
+  const blurDataURL = await generateBlurDataURL("/GalleryCard.jpg");
   return (
     <>
+      <head>
+        <link rel="preload" as="image" href="/GalleryCard.jpg" />
+      </head>    
       <HeroSection 
-        bgImage="/GalleryCard.jpg" 
+        bgImage="/GalleryCard.jpg"
+        blurDataURL={blurDataURL} 
         titlePart1="Check Out" 
         titlePart2="Our Work" 
         showBadge={false}  

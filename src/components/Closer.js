@@ -1,6 +1,8 @@
 import Button from "./Button"; 
 
-const Closer = () => {
+const Closer = ({
+    buttonText = "Get Estimate",
+}) => {
     return (
         <section className="bg-white py-10 px-4 sm:px-6 lg:px-8">
             <div className="text-center max-w-3xl mx-auto">
@@ -13,7 +15,7 @@ const Closer = () => {
 
                 {/* Call to Action Button */}
                 <div className="mt-6">
-                    <Button href="/contact">Get Estimate</Button>
+                    <Button href="/contact">{buttonText}</Button>
                 </div>
             </div>
         </section>

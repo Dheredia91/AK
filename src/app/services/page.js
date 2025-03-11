@@ -4,12 +4,18 @@ import AboutSection from "@/components/AboutSection";
 import ServicesHeading from "@/components/ServiceHeading";
 import ServicesSection from "@/components/ServicesSection";
 import EstimateForm from "@/components/EstimateForm";
+import { generateBlurDataURL } from "@/utils/generateBlur";
 
-export default function ServicesPage() {
+export default async function ServicesPage() {
+  const blurDataURL = await generateBlurDataURL("/Services_Hero.jpg");
   return (
     <>
+      <head>
+        <link rel="preload" as="image" href="/Services_Hero.jpg" />
+      </head>    
       <HeroSection 
-        bgImage="/Services_Hero.jpg" 
+        bgImage="/Services_Hero.jpg"
+        blurDataURL={blurDataURL} 
         titlePart1="Paving Services" 
         titlePart2="Reliable, Long-Lasting Asphalt Solutions" 
         showBadge={false}  

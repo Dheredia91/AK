@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState} from "react";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -14,7 +14,7 @@ const Header = () => {
           {/* Logo */}
           <div className="flex-1 md:flex md:items-center md:gap-12 pt-[12px]">
             <div className="mid:mt-18 z-30 w-[200px] justify-normal border border-black bg-white sm:mt-14 sm:w-[150px] sm_custom:mt-24 sm_custom:w-[200px] mid:mx-2">
-              <Link href="/home">
+              <Link href="/">
                 <Image 
                   src="/AK_Header_Logo.png" 
                   alt="Asphalt Kings Logo" 
@@ -49,7 +49,7 @@ const Header = () => {
             {/* Contact Information (Desktop) */}
             <div className="hidden md_custom:flex sm:gap-4">
               <div className="flex items-center space-x-2">
-                <span className="ml- text-sm text-white">Call (555) 412-1234</span>
+                <span className="ml- text-sm text-white">Call +1 (510) 567-8902</span>
                 <div className="flex h-6 w-6 items-center justify-center rounded-full bg-gold">
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="size-4">
                     <path d="M8 16.25a.75.75 0 0 1 .75-.75h2.5a.75.75 0 0 1 0 1.5h-2.5a.75.75 0 0 1-.75-.75Z" />
@@ -60,7 +60,7 @@ const Header = () => {
 
               <div className="hidden md_custom:flex">
                 <div className="flex items-center space-x-2">
-                  <span className="ml- text-sm text-white">Info@asphaltkingsinc.com</span>
+                  <span className="ml- text-sm text-white">info@asphaltkings.com</span>
                   <div className="flex h-6 w-6 items-center justify-center rounded-full bg-gold">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="size-4">
                       <path d="M3 4a2 2 0 0 0-2 2v1.161l8.441 4.221a1.25 1.25 0 0 0 1.118 0L19 7.162V6a2 2 0 0 0-2-2H3Z" />
@@ -99,7 +99,7 @@ const Header = () => {
 
           {/* Mobile Navigation */}
           <nav className="flex flex-col items-center gap-3 mt-24 text-md font-sans">
-            <Link href="/home" className="transition hover:text-gold" onClick={() => setIsMenuOpen(false)}>HOME</Link>
+            <Link href="/" className="transition hover:text-gold" onClick={() => setIsMenuOpen(false)}>HOME</Link>
             <Link href="/services" className="transition hover:text-gold" onClick={() => setIsMenuOpen(false)}>SERVICES</Link>
             <Link href="/estimate" className="transition hover:text-gold" onClick={() => setIsMenuOpen(false)}>ESTIMATE</Link>
             <Link href="/gallery" className="transition hover:text-gold" onClick={() => setIsMenuOpen(false)}>GALLERY</Link>
