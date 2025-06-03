@@ -34,8 +34,9 @@ const Footer = () => {
           <div className="w-full mid:w-1/3 flex flex-col items-center mid:items-end text-center font-alfarn px-2 mid:pr-2 py-4 mid:py-0">
             <div className="flex flex-col justify-center h-full">
               <h3 className="text-lg font-bold mb-2">Contact Us</h3>
-              <p className="text-gray-400"><a href="tel:+1234567890" className="hover:text-white">Phone: +1 (510) 860-8819</a></p>
+              <p className="text-gray-400"><a href="tel:+15108608819" className="hover:text-white">Phone: +1 (510) 860-8819</a></p>
               <p className="text-gray-400"><a href="mailto:asphaltkings67@yahoo.com" className="hover:text-white">asphaltkings67@yahoo.com</a></p>
+              <p className="text-gray-400"><span className="hover:text-white">Lic#1113680</span></p>
             </div>
           </div>
         </div>
