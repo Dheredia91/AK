@@ -20,7 +20,7 @@ const Footer = () => {
             <h3 className="text-lg font-bold mb-2">Sitemap</h3>
             <nav className="mb-4 text-gray-400">
               <ul className="flex flex-col mid:flex-row space-y-2 mid:space-y-0 mid:space-x-6">
-                <li><a href="/" className="hover:text-white">Home</a></li>
+                <li><Link href="/" className="hover:text-white">Home</Link></li>
                 <li><a href="/services" className="hover:text-white">Services</a></li>
                 <li><a href="/estimate" className="hover:text-white">Estimate</a></li>
                 <li><a href="/gallery" className="hover:text-white">Gallery</a></li>
