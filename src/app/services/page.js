@@ -1,3 +1,4 @@
+import Head from "next/head";
 import Layout from "@/app/layout";
 import HeroSection from "@/components/HeroSection";
 import AboutSection from "@/components/AboutSection";
@@ -10,9 +11,9 @@ export default async function ServicesPage() {
   const blurDataURL = await generateBlurDataURL("/Services_Hero.jpg");
   return (
     <>
-      <head>
+      <Head>
         <link rel="preload" as="image" href="/Services_Hero.jpg" />
-      </head>    
+      </Head>    
       <HeroSection 
         bgImage="/Services_Hero.jpg"
         blurDataURL={blurDataURL} 

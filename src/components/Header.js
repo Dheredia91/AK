@@ -49,7 +49,7 @@ const Header = () => {
             {/* Contact Information (Desktop) */}
             <div className="hidden md_custom:flex sm:gap-4">
               <div className="flex items-center space-x-2">
-                <span className="ml- text-sm text-white">Call +1 (510) 567-8902</span>
+                <span className="ml- text-sm text-white">Call +1 (510) 860-8819</span>
                 <div className="flex h-6 w-6 items-center justify-center rounded-full bg-gold">
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="size-4">
                     <path d="M8 16.25a.75.75 0 0 1 .75-.75h2.5a.75.75 0 0 1 0 1.5h-2.5a.75.75 0 0 1-.75-.75Z" />

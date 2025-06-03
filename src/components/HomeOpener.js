@@ -24,7 +24,7 @@ const HomeOpener = () => {
           </h2>
           <p className="mt-4 text-sm sm:text-md text-gray-900 leading-relaxed w-full">
             Since 2020, Asphalt Kings has been a trusted leader in asphalt, concrete, grading, and striping.  
-            We promise to deliver precision, efficiency, and long-lasting results—while keeping you informed every step of the way.
+            We promise to deliver precision, efficiency, and long-lasting results, while keeping you informed every step of the way.
           </p>
         </div>
 

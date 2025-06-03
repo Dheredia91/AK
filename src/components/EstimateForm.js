@@ -43,7 +43,7 @@ const EstimateForm = ({ title, description }) => {
 
                 {/* Right Section */}
                 <div className="w-fit mid:w-1/2 mid:mx-6 px-5">
-                    <h2 className="text-2xl sm:text-3xl font-bold text-black my-4 font-alfarn tracking-[-3px] mid:my-7">
+                    <h2 className="text-2xl sm:text-3xl font-bold text-black my-4 font-alfarn tracking-[-1px] mid:my-7">
                         Request an Estimate
                     </h2>
                     <form name="contact" onSubmit={handleFormSubmit} className="space-y-4">

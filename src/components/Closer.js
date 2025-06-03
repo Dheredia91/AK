@@ -8,8 +8,8 @@ const Closer = ({
             <div className="text-center max-w-3xl mx-auto">
                 {/* Tagline - Styled to Match Home Opener */}
                 <h2 className="text-xl sm:text-3xl font-bold text-gray-900">
-                    A quick estimate is great, 
-                    <span className="text-gold"> but precision matters</span>.  
+                    A quick estimate is great, but
+                    <span className="text-gold"> precision matters</span>.  
                     Let’s ensure your project gets the exact pricing it deserves.
                 </h2>
 

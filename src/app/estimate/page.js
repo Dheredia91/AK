@@ -1,3 +1,4 @@
+import Head from "next/head";
 import HeroSection from "@/components/HeroSection";
 import EstimateCalc from "@/components/EstimateCalc";
 import FAQ from "@/components/FAQ";
@@ -9,9 +10,9 @@ export default async function Estimate() {
   const blurDataURL = await generateBlurDataURL("/Estimate.jpg");
   return (
     <>
-      <head>
+      <Head>
         <link rel="preload" as="image" href="/Estimate.jpg" />
-      </head>   
+      </Head>   
       <HeroSection 
         bgImage="/Estimate.jpg"
         blurDataURL={blurDataURL} 

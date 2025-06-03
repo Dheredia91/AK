@@ -20,7 +20,7 @@ const Footer = () => {
             <h3 className="text-lg font-bold mb-2">Sitemap</h3>
             <nav className="mb-4 text-gray-400">
               <ul className="flex flex-col mid:flex-row space-y-2 mid:space-y-0 mid:space-x-6">
-                <li><a href="/home" className="hover:text-white">Home</a></li>
+                <li><a href="/" className="hover:text-white">Home</a></li>
                 <li><a href="/services" className="hover:text-white">Services</a></li>
                 <li><a href="/estimate" className="hover:text-white">Estimate</a></li>
                 <li><a href="/gallery" className="hover:text-white">Gallery</a></li>
@@ -33,7 +33,7 @@ const Footer = () => {
           <div className="w-full mid:w-1/3 flex flex-col items-center mid:items-end text-center font-alfarn px-2 mid:pr-2 py-4 mid:py-0">
             <div className="flex flex-col justify-center h-full">
               <h3 className="text-lg font-bold mb-2">Contact Us</h3>
-              <p className="text-gray-400"><a href="tel:+1234567890" className="hover:text-white">Phone: +1 (510) 567-8902</a></p>
+              <p className="text-gray-400"><a href="tel:+1234567890" className="hover:text-white">Phone: +1 (510) 860-8819</a></p>
               <p className="text-gray-400"><a href="mailto:info@asphaltkings.com" className="hover:text-white">info@asphaltkings.com</a></p>
             </div>
           </div>

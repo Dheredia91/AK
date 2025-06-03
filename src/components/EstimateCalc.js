@@ -12,12 +12,12 @@ const EstimateCalc = () => {
   const [error, setError] = useState("");
 
   const costPerSF = [
-    { max: 5000, rate: 6.4 },
-    { max: 10000, rate: 5.7 },
-    { max: 15000, rate: 4.57 },
-    { max: 20000, rate: 4.1 },
-    { max: 25000, rate: 4.0 },
-    { max: Infinity, rate: 3.79 },
+    { max: 5000, rate: 7.4 },
+    { max: 10000, rate: 6.7 },
+    { max: 15000, rate: 5.57 },
+    { max: 20000, rate: 5.1 },
+    { max: 25000, rate: 5.0 },
+    { max: Infinity, rate: 4.79 },
   ];
 
   const handleCalculation = () => {

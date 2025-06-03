@@ -1,4 +1,5 @@
 // pages/gallery/page.js
+import Head from "next/head";
 import HeroSection from "@/components/HeroSection";
 import GalleryCard from "@/components/GalleryCard";
 import { generateBlurDataURL } from "@/utils/generateBlur";
@@ -30,9 +31,9 @@ export default async function GalleryPage() {
   const blurDataURL = await generateBlurDataURL("/GalleryCard.jpg");
   return (
     <>
-      <head>
+      <Head>
         <link rel="preload" as="image" href="/GalleryCard.jpg" />
-      </head>    
+      </Head>    
       <HeroSection 
         bgImage="/GalleryCard.jpg"
         blurDataURL={blurDataURL} 

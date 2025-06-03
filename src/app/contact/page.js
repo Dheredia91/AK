@@ -1,3 +1,4 @@
+import Head from "next/head";
 import HeroSection from "@/components/HeroSection";
 import EstimateForm from "@/components/EstimateForm";
 import { generateBlurDataURL } from "@/utils/generateBlur";
@@ -6,9 +7,9 @@ export default async function Contact() {
   const blurDataURL = await generateBlurDataURL("/Contact.jpg");
   return (
     <>
-      <head>
+      <Head>
         <link rel="preload" as="image" href="/Contact.jpg" />
-      </head>   
+      </Head>   
       <HeroSection 
         bgImage="/Contact.jpg"
         blurDataURL={blurDataURL} 

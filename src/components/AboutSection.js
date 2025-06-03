@@ -24,7 +24,7 @@ const AboutSection = () => {
               What We Stand For?
             </h3>
             <p className="text-lg text-gray-800 leading-relaxed">
-              We value honesty. That’s why every client gets a <strong>detailed bid upfront</strong>, ensuring full clarity on what’s covered—and what’s not. 
+              We value honesty. That’s why every client gets a <strong>detailed bid upfront</strong>, ensuring full clarity on what’s covered, and what’s not. 
               No surprises, just <strong>trust, quality, and exceptional results</strong>.
             </p>
           </div>
