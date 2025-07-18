@@ -3,29 +3,55 @@ import { useState } from "react";
 import Card from "./Card";
 
 const EstimateForm = ({ title, description }) => {
-    const [formState, setFormState] = useState({ success: false, error: false });
+    const [formState, setFormState] = useState({ success: false, error: false, message: ""});
 
     const handleFormSubmit = async (event) => {
         event.preventDefault();
-        const formData = new FormData(event.target);
+        const form = event.target;
+        const formData = new FormData(form);
+
+        const email = formData.get("email")?.trim();
+        const phone = formData.get("phone")?.trim();
+
+        if (!email && !phone) {
+            setFormState({
+            success: false,
+            error: true,
+            message: "Please provide at least an email or a phone number."
+            });
+            return;
+        }
 
         try {
             const response = await fetch("/__forms.html", {
-                method: "POST",
-                headers: { "Content-Type": "application/x-www-form-urlencoded" },
-                body: new URLSearchParams(formData).toString(),
+            method: "POST",
+            headers: { "Content-Type": "application/x-www-form-urlencoded" },
+            body: new URLSearchParams(formData).toString(),
             });
 
             if (response.ok) {
-                setFormState({ success: true, error: false });
-                event.target.reset(); // Reset form fields
+            setFormState({
+                success: true,
+                error: false,
+                message: "Form submitted successfully!"
+            });
+            form.reset();
             } else {
-                setFormState({ success: false, error: true });
+            setFormState({
+                success: false,
+                error: true,
+                message: "Something went wrong. Please try again."
+            });
             }
         } catch (error) {
-            setFormState({ success: false, error: true });
+            setFormState({
+            success: false,
+            error: true,
+            message: "Something went wrong. Please try again."
+            });
         }
     };
+
 
     return (
         <section className="flex items-center justify-center bg-white sm:p-8">
@@ -58,8 +84,8 @@ const EstimateForm = ({ title, description }) => {
                             <input type="email" id="email" name="email" placeholder="Enter Your Email" className="w-full border border-gray-300 p-2" required />
                         </div>
                         <div>
-                            <label htmlFor="phone" className="block text-black font-bold mb-2">Your Phone *</label>
-                            <input type="tel" id="phone" name="phone" placeholder="Enter Your Phone Number" className="w-full border border-gray-300 p-2" required />
+                            <label htmlFor="phone" className="block text-black font-bold mb-2">Your Phone</label>
+                            <input type="tel" id="phone" name="phone" placeholder="Enter Your Phone Number" className="w-full border border-gray-300 p-2" />
                         </div>
                         <div>
                             <label htmlFor="address" className="block text-black font-bold mb-2">Project Address *</label>
@@ -87,8 +113,7 @@ const EstimateForm = ({ title, description }) => {
                     </form>
 
                     {/* Success & Error Messages */}
-                    {formState.success && <p className="text-green-600">Form submitted successfully!</p>}
-                    {formState.error && <p className="text-red-600">Something went wrong. Please try again.</p>}
+                    {formState.message && (<p className={`mt-2 text-sm ${formState.success ? "text-green-600" : "text-red-600"}`}> {formState.message}</p>)}
 
                     <p className="mt-4 text-sm text-gray-600">
                         This site is protected by reCAPTCHA Enterprise and the Google <a href="#" className="text-blue-500">Privacy Policy</a> and <a href="#" className="text-blue-500">Terms of Service</a> apply.
