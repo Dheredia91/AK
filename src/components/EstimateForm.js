@@ -81,15 +81,15 @@ const EstimateForm = ({ title, description }) => {
                         </div>
                         <div>
                             <label htmlFor="email" className="block text-black font-bold mb-2">Email *</label>
-                            <input type="email" id="email" name="email" placeholder="Enter Your Email" className="w-full border border-gray-300 p-2" required />
+                            <input type="email" id="email" name="email" placeholder="Enter Your Email" className="w-full border border-gray-300 p-2" />
                         </div>
                         <div>
-                            <label htmlFor="phone" className="block text-black font-bold mb-2">Your Phone</label>
+                            <label htmlFor="phone" className="block text-black font-bold mb-2">Phone</label>
                             <input type="tel" id="phone" name="phone" placeholder="Enter Your Phone Number" className="w-full border border-gray-300 p-2" />
                         </div>
                         <div>
-                            <label htmlFor="address" className="block text-black font-bold mb-2">Project Address *</label>
-                            <input type="text" id="address" name="address" placeholder="Project Address" className="w-full border border-gray-300 p-2" required />
+                            <label htmlFor="address" className="block text-black font-bold mb-2">Project Location *</label>
+                            <input type="text" id="address" name="address" placeholder="Project Location" className="w-full border border-gray-300 p-2" required />
                         </div>
                         <div>
                             <label htmlFor="type" className="block text-black font-bold mb-2">Type of Project</label>
